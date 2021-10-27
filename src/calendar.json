@@ -2,13 +2,84 @@
   "terms": [
     {
       "name": "Fall 2021",
-      "start": "2021-08-21",
-      "end": "2021-12-18"
+      "start": "2021-08-23",
+      "end": "2021-12-13",
+      "events": [
+        {
+          "date": "2021-09-03",
+          "noClasses": false,
+          "description": "Drop/Add ends"
+        },
+        {
+          "start": "2021-10-01",
+          "end": "2021-10-05",
+          "noClasses": true,
+          "description": "Fall Break"
+        },
+        {
+          "date": "2021-11-05",
+          "noClasses": false,
+          "description": "Last day to withdraw with W from Fall 2021 classes (undergraduates only)"
+        },
+        {
+          "start": "2021-11-24",
+          "end": "2021-11-28",
+          "noClasses": true,
+          "description": "Thanksgiving recess"
+        },
+        {
+          "start": "2021-12-04",
+          "end": "2021-12-07",
+          "noClasses": true,
+          "description": "Reading Period"
+        },
+        {
+          "start": "2021-12-08",
+          "end": "2021-12-13",
+          "noClasses": true,
+          "description": "Final Examinations"
+        }
+      ]
     },
     {
       "name": "Spring 2022",
-      "start": "2022-01-14",
-      "end": "2022-05-19"
+      "start": "2022-01-05",
+      "end": "2022-04-30",
+      "events": [
+        {
+          "date": "2022-01-17",
+          "noClasses": true,
+          "description": "Martin Luther King, Jr. Day"
+        },
+        {
+          "date": "2022-01-19",
+          "noClasses": false,
+          "description": "Drop/Add ends"
+        },
+        {
+          "start": "2022-03-04",
+          "end": "2022-03-13",
+          "noClasses": true,
+          "description": "Spring Break"
+        },
+        {
+          "date": "2022-03-23",
+          "noClasses": false,
+          "description": "Last day to withdraw with W from Fall 2021 classes (undergraduates only)"
+        },
+        {
+          "start": "2022-04-21",
+          "end": "2022-04-24",
+          "noClasses": true,
+          "description": "Reading Period"
+        },
+        {
+          "start": "2022-04-25",
+          "end": "2022-04-30",
+          "noClasses": true,
+          "description": "Final Examinations"
+        }
+      ]
     }
   ]
 }
