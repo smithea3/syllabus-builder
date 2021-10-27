@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Syllabus Builder</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form>
+      <label for="terms">Semester to use for syllabus:</label>
+      <select id="terms" name="termNum"></select>
+      
+      <fieldset>
+        <legend>Select the days of the week when your class will meet:</legend>
+        <label><input type="checkbox" name="weekday" value="1" />Monday</label>
+        <label><input type="checkbox" name="weekday" value="2" />Tuesday</label>
+        <label><input type="checkbox" name="weekday" value="3" />Wednesday</label>
+        <label><input type="checkbox" name="weekday" value="4" />Thursday</label>
+        <label><input type="checkbox" name="weekday" value="5" />Friday</label>
+      </fieldset>
+      
+      <label for="dateformat">Date format:</label>
+      <select id="dateformat" name="dateformat">
+        <option value="M d, Y">January 27, 2020</option>
+        <option value="m d, Y">Jan 27, 2020</option>
+      </select>
+      
+      <label for="fileformat">File format:</label>
+      <select id="fileformat" name="fileformat">
+        <option value=".md">Markdown</option>
+        <option value=".html">HTML</option>
+        <option value=".docx">Microsoft Word (.docx)</option>
+      </select>
+      
+      <input type="submit" value="Submit" />
+    </form>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
