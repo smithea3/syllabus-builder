@@ -14,7 +14,7 @@ import calendar from "./calendar.json";
     const form: HTMLFormElement | null = document.querySelector("form");
     if (form) {
       form.onsubmit = (e) => {
-        e.preventDefault;
+        e.preventDefault();
         const data = new FormData(form);
         const blob: Blob = generateFile(data);
         saveAs(blob, "test_file.txt");

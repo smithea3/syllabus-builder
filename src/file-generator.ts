@@ -1,7 +1,13 @@
+import { getMeetDates } from "./date-generator";
+
 export function generateFile(data: FormData): Blob {
-  console.log(data.getAll("weekday"));
-  console.log(data.get("termNum"));
-  return new Blob(["this is text\nto go in a test file"], {
+  const meetings: string[] = getMeetDates(
+    Number(data.get("termNum")),
+    data.getAll("weekday").map((val) => Number(val)),
+    data.get("dateformat") as string
+  );
+  console.log(meetings);
+  return new Blob(meetings, {
     type: "octet/stream",
   });
 }

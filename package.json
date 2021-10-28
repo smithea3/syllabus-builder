@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^2.25.0",
     "file-saver": "^2.0.5"
   },
   "devDependencies": {
