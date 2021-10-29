@@ -23,7 +23,7 @@ export function getMeetDates(
   let meetings: string[] = [];
   termDates.reduce((prev: string[], current): string[] => {
     if (weekdays.includes(current.getDay())) {
-      let header = format(current, "eee, MMMM d, y");
+      let header = format(current, outputFormat);
       let event = hasEvents(current, eventData);
       if (event) {
         let noClass = event.noClasses ? "NO CLASS" : "";
