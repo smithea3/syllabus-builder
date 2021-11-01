@@ -17,7 +17,7 @@ import calendar from "./calendar.json";
         e.preventDefault();
         const data = new FormData(form);
         const blob: Blob = generateFile(data);
-        saveAs(blob, "test_file.txt");
+        saveAs(blob, `syllabus${data.get("fileformat") || ".txt"}`);
       };
     }
   };
