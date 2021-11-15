@@ -13,10 +13,10 @@ import calendar from "./calendar.json";
     });
     const form: HTMLFormElement | null = document.querySelector("form");
     if (form) {
-      form.onsubmit = (e) => {
+      form.onsubmit = async (e) => {
         e.preventDefault();
         const data = new FormData(form);
-        const blob: Blob = generateFile(data);
+        const blob: Blob = await generateFile(data);
         saveAs(blob, `syllabus${data.get("fileformat") || ".txt"}`);
       };
     }
