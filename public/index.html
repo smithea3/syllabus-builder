@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Syllabus Builder</title>
@@ -8,16 +8,26 @@
     <form>
       <label for="terms">Semester to use for syllabus:</label>
       <select id="terms" name="termNum"></select>
-      
+
       <fieldset>
         <legend>Select the days of the week when your class will meet:</legend>
-        <label><input type="checkbox" name="weekday" value="1" />Monday</label>
-        <label><input type="checkbox" name="weekday" value="2" />Tuesday</label>
-        <label><input type="checkbox" name="weekday" value="3" />Wednesday</label>
-        <label><input type="checkbox" name="weekday" value="4" />Thursday</label>
-        <label><input type="checkbox" name="weekday" value="5" />Friday</label>
+        <label>
+          <input type="checkbox" name="weekday" value="1" />Monday
+        </label>
+        <label>
+          <input type="checkbox" name="weekday" value="2" />Tuesday
+        </label>
+        <label>
+          <input type="checkbox" name="weekday" value="3" />Wednesday
+        </label>
+        <label>
+          <input type="checkbox" name="weekday" value="4" />Thursday
+        </label>
+        <label>
+          <input type="checkbox" name="weekday" value="5" />Friday
+        </label>
       </fieldset>
-      
+
       <label for="dateformat">Date format:</label>
       <select id="dateformat" name="dateformat">
         <option value="eeee, MMMM d, y">Monday, January 25, 2021</option>
@@ -36,7 +46,7 @@
         <option value="y-MM-dd">2021-01-25</option>
         <option value="MM/dd">01/25</option>
       </select>
-      
+
       <label for="fileformat">File format:</label>
       <select id="fileformat" name="fileformat">
         <option value=".md">Markdown</option>
@@ -44,11 +54,10 @@
         <option value=".docx">Microsoft Word (.docx)</option>
         <option value=".txt">Plain text of just dates</option>
       </select>
-      
+
       <input type="submit" value="Submit" />
     </form>
     <script src="js/main.js" type="module"></script>
-    <script src="js/templates/html.js"></script>
-    <script src="js/templates/markdown.js"></script>
+    <script src="js/templates.js"></script>
   </body>
 </html>
