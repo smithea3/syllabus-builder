@@ -1,6 +1,6 @@
 import nunjucks from "nunjucks";
 import { getMeetDates } from "./date-generator";
-import { renderDocx } from "./templates/word-docx";
+import { renderDocx } from "./word-docx";
 
 const intro = `Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.`;
 

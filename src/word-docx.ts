@@ -1,5 +1,5 @@
 import docx from "docx";
-import { TemplateContext } from "../file-generator";
+import { TemplateContext } from "./file-generator";
 
 export async function renderDocx(context: TemplateContext): Promise<Blob> {
   let meetings = context.meetings.map((meeting) => {
