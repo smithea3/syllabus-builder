@@ -1,10 +1,12 @@
 import nunjucks from "nunjucks";
+import { HintExtension } from "../src/nunjucks-plugins.js";
 
-let env = new nunjucks.Environment();
+var njEnv = new nunjucks.Environment();
+njEnv.addExtension("HintExtension", new HintExtension());
 console.log(
   // This process runs from the project root
   nunjucks.precompile("./templates", {
-    env: env,
+    env: njEnv,
     include: [".njk"],
   })
 );

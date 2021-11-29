@@ -1,8 +1,11 @@
 import nunjucks from "nunjucks";
 import { getMeetDates } from "./date-generator";
 import { renderDocx } from "./word-docx";
+import { HintExtension } from "./nunjucks-plugins";
 
-const intro = `Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.`;
+const njEnv = nunjucks
+  .configure({ autoescape: false })
+  .addExtension("HintExtension", new HintExtension());
 
 export async function generateFile(data: FormData): Promise<Blob> {
   const meetings: string[] = getMeetDates(
@@ -11,23 +14,24 @@ export async function generateFile(data: FormData): Promise<Blob> {
     data.get("dateformat") as string
   );
   const context: TemplateContext = {
-    introduction: intro,
+    format: data.get("fileformat") as string,
     meetings: meetings,
   };
   let blob: Blob;
   switch (data.get("fileformat")) {
     case ".md":
-      blob = new Blob([nunjucks.render("markdown.njk", context)], {
+      blob = new Blob([njEnv.render("syllabus-contents.njk", context)], {
         type: "octet/stream",
       });
       break;
     case ".html":
-      blob = new Blob([nunjucks.render("html.njk", context)], {
+      blob = new Blob([njEnv.render("html.njk", context)], {
         type: "octet/stream",
       });
       break;
     case ".docx":
-      blob = await renderDocx(context);
+      blob = new Blob([njEnv.render("syllabus-contents.njk", context)]);
+      // blob = await renderDocx(context);
       break;
     default:
       blob = new Blob([meetings.join("\n")], { type: "octet/stream" });
@@ -36,6 +40,6 @@ export async function generateFile(data: FormData): Promise<Blob> {
 }
 
 export interface TemplateContext {
-  introduction: string;
+  format: string;
   meetings: string[];
 }
