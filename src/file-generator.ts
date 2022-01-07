@@ -17,10 +17,12 @@ export async function generateFile(data: FormData): Promise<Blob> {
     format: data.get("fileformat") as string,
     meetings: meetings,
   };
+  const content = njEnv.render("syllabus-contents.njk", context);
+  context.content = content;
   let blob: Blob;
   switch (data.get("fileformat")) {
     case ".md":
-      blob = new Blob([njEnv.render("syllabus-contents.njk", context)], {
+      blob = new Blob([njEnv.render("markdown.njk", context)], {
         type: "octet/stream",
       });
       break;
@@ -40,6 +42,7 @@ export async function generateFile(data: FormData): Promise<Blob> {
 }
 
 export interface TemplateContext {
+  content?: string;
   format: string;
   meetings: string[];
 }
