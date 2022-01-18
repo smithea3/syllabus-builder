@@ -1,11 +1,12 @@
 import nunjucks from "nunjucks";
 import { getMeetDates } from "./date-generator";
 import { renderDocx } from "./word-docx";
-import { HintExtension } from "./nunjucks-plugins";
+import { HintExtension, markdownify } from "./nunjucks-plugins";
 
 const njEnv = nunjucks
   .configure({ autoescape: false })
-  .addExtension("HintExtension", new HintExtension());
+  .addExtension("HintExtension", new HintExtension())
+  .addFilter("MarkdownFilter", markdownify);
 
 export async function generateFile(data: FormData): Promise<Blob> {
   const meetings: string[] = getMeetDates(

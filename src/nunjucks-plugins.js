@@ -1,3 +1,5 @@
+import MarkdownIt from "markdown-it";
+
 class HintExtension {
   tags = ["hint"];
 
@@ -27,4 +29,9 @@ class HintExtension {
   }
 }
 
-export { HintExtension };
+function markdownify(str) {
+  const md = new MarkdownIt();
+  return md.render(str);
+}
+
+export { HintExtension, markdownify };

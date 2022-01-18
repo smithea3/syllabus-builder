@@ -1,8 +1,10 @@
 import nunjucks from "nunjucks";
-import { HintExtension } from "../src/nunjucks-plugins.js";
+import { HintExtension, markdownify } from "../src/nunjucks-plugins";
 
 var njEnv = new nunjucks.Environment();
-njEnv.addExtension("HintExtension", new HintExtension());
+njEnv
+  .addExtension("HintExtension", new HintExtension())
+  .addFilter("MarkdownFilter", markdownify);
 console.log(
   // This process runs from the project root
   nunjucks.precompile("./templates", {
