@@ -1,5 +1,5 @@
 import nunjucks from "nunjucks";
-import { HintExtension, markdownify } from "../src/nunjucks-plugins";
+import { HintExtension, markdownify } from "../src/nunjucks-plugins.js";
 
 var njEnv = new nunjucks.Environment();
 njEnv

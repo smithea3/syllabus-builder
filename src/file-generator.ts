@@ -1,7 +1,7 @@
 import nunjucks from "nunjucks";
 import { getMeetDates } from "./date-generator";
 import { renderDocx } from "./word-docx";
-import { HintExtension, markdownify } from "./nunjucks-plugins";
+import { HintExtension, markdownify } from "./nunjucks-plugins.js";
 
 const njEnv = nunjucks
   .configure({ autoescape: false })

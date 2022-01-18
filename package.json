@@ -6,8 +6,8 @@
   "main": "main.js",
   "scripts": {
     "precompile": "node ./templates/compile-templates.js > ./src/templates.js",
-    "start": "npm run precompile && snowpack dev",
-    "build": "npm run precompile && snowpack build",
+    "start": "npm run precompile && snowpack dev --polyfill-node",
+    "build": "npm run precompile && snowpack build --polyfill-node",
     "clean": "rm -rf ./build && rm ./src/templates.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
