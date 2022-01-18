@@ -30,7 +30,7 @@ class HintExtension {
 }
 
 function markdownify(str) {
-  const md = new MarkdownIt();
+  const md = new MarkdownIt({ html: true });
   return md.render(str);
 }
 

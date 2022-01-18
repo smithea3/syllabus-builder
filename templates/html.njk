@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Course Syllabus</title>
+    <title>[Course] Syllabus</title>
   </head>
   <body>
-    <h1>Syllabus for [course]</h1>
-    <p>{{ introduction }}</p>
+    <header>
+      <h1>[Your Course]</h1>
+      <p>[Semester] [Year]<br />
+        [Course days and times]</p>
+    </header>
     
-    {% for meeting in meetings -%}
-    <h2>{{ meeting }}</h2>
-    
-    {% endfor %}
+    {{ content | markdownify }}
   </body>
 </html>

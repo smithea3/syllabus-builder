@@ -6,7 +6,7 @@ import { HintExtension, markdownify } from "./nunjucks-plugins.js";
 const njEnv = nunjucks
   .configure({ autoescape: false })
   .addExtension("HintExtension", new HintExtension())
-  .addFilter("MarkdownFilter", markdownify);
+  .addFilter("markdownify", markdownify);
 
 export async function generateFile(data: FormData): Promise<Blob> {
   const meetings: string[] = getMeetDates(
