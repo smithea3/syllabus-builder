@@ -7,7 +7,9 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": true,
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
     // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
     // "removeComments": true,                           /* Disable emitting comments. */
@@ -29,5 +31,6 @@
     // "noPropertyAccessFromIndexSignature": true,       /* Enforces using indexed accessors for keys declared using an indexed type */
     // "allowUnusedLabels": true,                        /* Disable error reporting for unused labels. */
     // "allowUnreachableCode": true,                     /* Disable error reporting for unreachable code. */
+    "types": ["vite/client"]
   }
 }
