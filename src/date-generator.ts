@@ -4,13 +4,13 @@ import {
   isEqual,
   parseISO,
   subDays,
-} from "date-fns";
-import calendar from "./calendar.json";
+} from 'date-fns';
+import calendar from './calendar.json';
 
 export function getMeetDates(
   termNum: number,
   weekdays: number[],
-  outputFormat: string
+  outputFormat: string,
 ): string[] {
   const termData = calendar.terms[termNum];
   const termDates = eachDayOfInterval({
@@ -20,13 +20,13 @@ export function getMeetDates(
   });
   // termDates.forEach((date) => console.log(date.toString()));
   const eventData: DayData[] = getEventData(termData.events);
-  let meetings: string[] = [];
+  const meetings: string[] = [];
   termDates.reduce((prev: string[], current): string[] => {
     if (weekdays.includes(current.getDay())) {
       let header = format(current, outputFormat);
-      let event = hasEvents(current, eventData);
+      const event = hasEvents(current, eventData);
       if (event) {
-        let noClass = event.noClasses ? "NO CLASS" : "";
+        const noClass = event.noClasses ? 'NO CLASS' : '';
         header = `${header} ${noClass} (${event.description})`;
       }
       prev.push(header);
@@ -52,13 +52,11 @@ function getEventData(data: JsonEventData[]): DayData[] {
         start: subDays(parseISO(current.start), 1),
         end: parseISO(current.end),
       });
-      allDays.forEach((day) =>
-        previous.push({
-          date: day,
-          noClasses: current.noClasses,
-          description: current.description,
-        })
-      );
+      allDays.forEach((day) => previous.push({
+        date: day,
+        noClasses: current.noClasses,
+        description: current.description,
+      }));
     }
     return previous;
   }, []);

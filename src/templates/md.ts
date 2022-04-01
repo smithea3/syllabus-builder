@@ -1,5 +1,5 @@
-export const renderMd = `
-# Syllabus for [Your Course]
+const renderMd = `
+# Syllabus for {{ coursename }}
 
 {{ introduction }}
 
@@ -8,3 +8,4 @@ export const renderMd = `
 
 {% endfor %}
 `;
+export default renderMd;
