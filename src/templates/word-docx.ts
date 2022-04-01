@@ -1,25 +1,23 @@
-import * as docx from "docx";
-import { TemplateContext } from "../file-generator";
+import * as docx from 'docx';
+import { TemplateContext } from '../file-generator.js';
 
-export async function renderDocx(context: TemplateContext): Promise<Blob> {
-  let meetings = context.meetings.map((meeting) => {
-    return new docx.Paragraph({
-      heading: docx.HeadingLevel.HEADING_3,
-      text: meeting,
-    });
-  });
+export default async function renderDocx(context: TemplateContext): Promise<Blob> {
+  const meetings = context.meetings.map((meeting) => new docx.Paragraph({
+    heading: docx.HeadingLevel.HEADING_3,
+    text: meeting,
+  }));
   const doc = new docx.Document({
     sections: [
       {
         children: [
           new docx.Paragraph({
             heading: docx.HeadingLevel.HEADING_1,
-            text: "Course Syllabus - [your course]",
+            text: `Course Syllabus - ${context.coursename}`,
           }),
           new docx.Paragraph(context.introduction),
           new docx.Paragraph({
             heading: docx.HeadingLevel.HEADING_2,
-            text: "Class Meetings",
+            text: 'Class Meetings',
           }),
           ...meetings,
         ],

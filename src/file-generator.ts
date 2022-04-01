@@ -1,37 +1,41 @@
-import nunjucks from "nunjucks";
-import { getMeetDates } from "./date-generator";
-import { renderDocx } from "./templates/word-docx";
-import { renderHtml } from "./templates/html";
-import { renderMd } from "./templates/md";
-const intro = `Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.`;
+import nunjucks from 'nunjucks';
+import { getMeetDates } from './date-generator';
+import renderDocx from './templates/word-docx';
+import renderHtml from './templates/html';
+import renderMd from './templates/md';
+
+const intro = 'Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.';
 
 export async function generateFile(data: FormData): Promise<Blob> {
   const meetings: string[] = getMeetDates(
-    Number(data.get("termNum")),
-    data.getAll("weekday").map((val) => Number(val)),
-    data.get("dateformat") as string
+    Number(data.get('termNum')),
+    data.getAll('weekday').map((val) => Number(val)),
+    data.get('dateformat') as string,
   );
+  const coursename: String = data.get('coursename');
+
   const context: TemplateContext = {
     introduction: intro,
-    meetings: meetings,
+    meetings,
+    coursename: coursename
   };
   let blob: Blob;
-  switch (data.get("fileformat")) {
-    case ".md":
+  switch (data.get('fileformat')) {
+    case '.md':
       blob = new Blob([nunjucks.renderString(renderMd, context)], {
-        type: "octet/stream",
+        type: 'octet/stream',
       });
       break;
-    case ".html":
+    case '.html':
       blob = new Blob([nunjucks.renderString(renderHtml, context)], {
-        type: "octet/stream",
+        type: 'octet/stream',
       });
       break;
-    case ".docx":
+    case '.docx':
       blob = await renderDocx(context);
       break;
     default:
-      blob = new Blob([meetings.join("\n")], { type: "octet/stream" });
+      blob = new Blob([meetings.join('\n')], { type: 'octet/stream' });
   }
   return blob;
 }
