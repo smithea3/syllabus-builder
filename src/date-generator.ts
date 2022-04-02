@@ -7,33 +7,18 @@ import {
 } from 'date-fns';
 import calendar from './calendar.json';
 
-export function getMeetDates(
-  termNum: number,
-  weekdays: number[],
-  outputFormat: string,
-): string[] {
-  const termData = calendar.terms[termNum];
-  const termDates = eachDayOfInterval({
-    // need to start day before because... reasons?
-    start: subDays(parseISO(termData.start), 1),
-    end: parseISO(termData.end),
-  });
-  // termDates.forEach((date) => console.log(date.toString()));
-  const eventData: DayData[] = getEventData(termData.events);
-  const meetings: string[] = [];
-  termDates.reduce((prev: string[], current): string[] => {
-    if (weekdays.includes(current.getDay())) {
-      let header = format(current, outputFormat);
-      const event = hasEvents(current, eventData);
-      if (event) {
-        const noClass = event.noClasses ? 'NO CLASS' : '';
-        header = `${header} ${noClass} (${event.description})`;
-      }
-      prev.push(header);
-    }
-    return prev;
-  }, meetings);
-  return meetings;
+interface DayData {
+  date: Date;
+  noClasses: boolean;
+  description: string;
+}
+
+interface JsonEventData {
+  date?: string;
+  start?: string;
+  end?: string;
+  noClasses: boolean;
+  description: string;
 }
 
 // This function converts date strings to actual Date objects, and explodes
@@ -67,16 +52,31 @@ function hasEvents(d: Date, events: DayData[]): DayData | undefined {
   return events.find((event) => isEqual(event.date, d));
 }
 
-interface DayData {
-  date: Date;
-  noClasses: boolean;
-  description: string;
-}
-
-interface JsonEventData {
-  date?: string;
-  start?: string;
-  end?: string;
-  noClasses: boolean;
-  description: string;
+export default function getMeetDates(
+  termNum: number,
+  weekdays: number[],
+  outputFormat: string,
+): string[] {
+  const termData = calendar.terms[termNum];
+  const termDates = eachDayOfInterval({
+    // need to start day before because... reasons?
+    start: subDays(parseISO(termData.start), 1),
+    end: parseISO(termData.end),
+  });
+  // termDates.forEach((date) => console.log(date.toString()));
+  const eventData: DayData[] = getEventData(termData.events);
+  const meetings: string[] = [];
+  termDates.reduce((prev: string[], current): string[] => {
+    if (weekdays.includes(current.getDay())) {
+      let header = format(current, outputFormat);
+      const event = hasEvents(current, eventData);
+      if (event) {
+        const noClass = event.noClasses ? 'NO CLASS' : '';
+        header = `${header} ${noClass} (${event.description})`;
+      }
+      prev.push(header);
+    }
+    return prev;
+  }, meetings);
+  return meetings;
 }

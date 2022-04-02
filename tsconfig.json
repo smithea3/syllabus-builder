@@ -10,6 +10,8 @@
     "skipLibCheck": true, /* Skip type checking all .d.ts files. */
     "isolatedModules": true,
     "useDefineForClassFields": true,
+    "experimentalDecorators": true,
+    "importsNotUsedAsValues": "preserve",
     // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
     // "removeComments": true,                           /* Disable emitting comments. */

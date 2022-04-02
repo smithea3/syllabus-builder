@@ -4,7 +4,7 @@ import { generatePreview } from './preview-generator.js';
 import calendar from './calendar.json';
 import './scss/app.scss';
 
-(function () {
+(function main() {
   window.onload = () => {
     const debug = (import.meta.env.MODE === 'development');
     // Load the terms
@@ -29,11 +29,10 @@ import './scss/app.scss';
 
     // Enable download button when file format selected
     const fileformat = document.getElementById('fileformat');
-    fileformat?.addEventListener('change', toggleDownloadState);
     function toggleDownloadState(e) {
       const option = e.target.value;
       const download: HTMLElement | null = document.getElementById('download');
-      debug ? console.log(`File format changed: ${option}`) : null;
+      (debug) ? console.log(`File format changed: ${option}`) : null;
       if (option !== 0 && download) {
         download.disabled = false;
       }
@@ -41,6 +40,7 @@ import './scss/app.scss';
         download.disabled = true;
       }
     }
+    fileformat?.addEventListener('change', toggleDownloadState);
 
     // Update the viewer on form change
     if (form) {

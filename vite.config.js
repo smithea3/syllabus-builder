@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import nunjucks from 'vite-plugin-nunjucks'
 
@@ -12,5 +13,9 @@ export default defineConfig({
     nunjucks({
       templatesDir: './src/templates',
     }),
-  ]
-})
+  ],
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+  },
+});
