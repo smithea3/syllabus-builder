@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "vite",
-    "build": "npm-run-all  build:vite",
+    "build": "npm-run-all test build:vite",
     "build:vite": "vite build",
     "build:css": "npm-run-all css-compile css-prefix",
     "preview": "vite preview",
@@ -14,7 +14,11 @@
     "css:prefix": "postcss --replace dist/css/starter.css --use autoprefixer --map",
     "css-purge": "purgecss --keyframes --css dist/css/starter.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output dist/css/",
     "eslint": "eslint \"src/**/*.ts\"",
-    "test": "npm-run-all css:lint eslint"
+    "test": "npm-run-all css:lint eslint test:js",
+    "test:js": "vitest --watch=false",
+    "test:js:watch": "vitest watch",
+    "test:js:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
   },
   "author": "",
   "license": "MIT",
@@ -27,14 +31,17 @@
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {
+    "@js-temporal/polyfill": "^0.4.0",
     "@types/file-saver": "^1.3.0",
     "@types/nunjucks": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
+    "@vitest/ui": "^0.8.2",
     "autoprefixer": "^10.4.4",
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "happy-dom": "^2.55.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
@@ -45,6 +52,7 @@
     "stylelint-config-twbs-bootstrap": "^3.0.1",
     "typescript": "^4.4.4",
     "vite": "^2.9.1",
-    "vite-plugin-nunjucks": "^0.1.10"
+    "vite-plugin-nunjucks": "^0.1.10",
+    "vitest": "^0.8.2"
   }
 }

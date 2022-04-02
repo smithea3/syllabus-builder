@@ -1,11 +1,16 @@
 import nunjucks from 'nunjucks';
-import { getMeetDates } from './date-generator';
+import getMeetDates from './date-generator';
 import renderDocx from './templates/word-docx';
 import renderHtml from './templates/html';
 import renderMd from './templates/md';
 
 const intro = 'Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.';
 
+export interface TemplateContext {
+  introduction: string;
+  meetings: string[];
+  coursename: string;
+}
 export async function generateFile(data: FormData): Promise<Blob> {
   const meetings: string[] = getMeetDates(
     Number(data.get('termNum')),
@@ -17,7 +22,7 @@ export async function generateFile(data: FormData): Promise<Blob> {
   const context: TemplateContext = {
     introduction: intro,
     meetings,
-    coursename: coursename
+    coursename,
   };
   let blob: Blob;
   switch (data.get('fileformat')) {
@@ -38,9 +43,4 @@ export async function generateFile(data: FormData): Promise<Blob> {
       blob = new Blob([meetings.join('\n')], { type: 'octet/stream' });
   }
   return blob;
-}
-
-export interface TemplateContext {
-  introduction: string;
-  meetings: string[];
 }
