@@ -14,7 +14,7 @@ $ npm install
 
 The project config includes a few scripts:
 
-- `npm run start` - builds and starts Snowpack's dev server with hot reloading.
+- `npm run preview` - builds and starts vite dev server with hot reloading.
 - `npm run build` - builds the project and outputs to a `build` folder.
 
 ### Updating the Calendar
