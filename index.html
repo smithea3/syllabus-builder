@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Syllabus Builder : Learning Innovation : Duke University</title>
+    <title>Syllabus Builder : Syllabus Templating</title>
     <meta charset="utf-8" />
   </head>
   <body class="bg-light">
     <main id="app" class="py-5 px-3 mx-auto">
       <nav class="navbar">
         <a class="navbar-brand" href="https://learninginnovation.duke.edu">
-          <img src="duke_learning_innovation_logo.png" alt="Duke Learning Innovation Logo" width="400"/>
+          <!-- img src="duke_learning_innovation_logo.png" alt="Duke Learning Innovation Logo" width="400"/ -->
         </a>
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Syllabus Builder</a>
+          <!-- a class="nav-link active" aria-current="page" href="#">Syllabus Builder</a -->
           </div>
         </nav>
       <form id="builder" class="needs-validation row" novalidate>
@@ -19,7 +19,7 @@
           <h2>Options</h2>
           <div class="col-md-10 mb-3">
             <label class="form-label" for="coursename">Course name:</label>
-            <input type="text" class="form-control" name="coursename" id="coursename" placeholder="DEMO 102 - 02">
+            <input type="text" class="form-control" name="coursename" id="coursename" placeholder="MAT-143-800">
           </div>
           <div class="col-md-6 mb-3">
             <label class="form-label" for="terms"
@@ -104,6 +104,17 @@
             value="5"
             id="Friday"
             />Friday</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label"
+            ><input
+            class="form-check-input"
+            type="checkbox"
+            name="weekday"
+            value="6"
+            id="Saturday"
+            />Saturday</label
             >
           </div>
         </fieldset>
