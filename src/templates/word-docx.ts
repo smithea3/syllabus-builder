@@ -7,14 +7,32 @@ export default async function renderDocx(context: TemplateContext): Promise<Blob
     text: meeting,
   }));
   const doc = new docx.Document({
+    title: `Syllabus for ${context.coursename}`,
     sections: [
       {
         children: [
+          // Course Syllabus Title
           new docx.Paragraph({
             heading: docx.HeadingLevel.HEADING_1,
             text: `Course Syllabus - ${context.coursename}`,
           }),
-          new docx.Paragraph(context.introduction),
+          // Introduction Statement
+          new docx.Paragraph({
+            heading: docx.HeadingLevel.HEADING_1,
+            text: 'Introduction',
+          }),
+          new docx.Paragraph(
+            'Type introduction here.',
+          ),
+          // Module/unit-level Objectives Section
+          new docx.Paragraph({
+            heading: docx.HeadingLevel.HEADING_1,
+            text: `Module-level Objectives for ${context.coursename}`,
+          }),
+          new docx.Paragraph(
+            'Type module/unit-level objectives here.',
+          ),
+          // Class meeting schedule.
           new docx.Paragraph({
             heading: docx.HeadingLevel.HEADING_2,
             text: 'Class Meetings',

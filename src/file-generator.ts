@@ -4,7 +4,7 @@ import renderDocx from './templates/word-docx';
 import renderHtml from './templates/html';
 import renderMd from './templates/md';
 
-const intro = 'Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.';
+const intro = 'This is a programmatically generated course syllabus with various headings. Please feel free to edit as you see fit.';
 
 export interface TemplateContext {
   introduction: string;

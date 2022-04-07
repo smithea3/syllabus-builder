@@ -2,7 +2,7 @@ import nunjucks from 'nunjucks';
 import getMeetDates from './date-generator';
 import renderPreview from './templates/preview.js';
 
-const intro = 'Hello and welcome to this course! The Duke Honor Code applies to all assignments, quizzes, and exams.';
+const intro = 'This is a programmatically generated course syllabus with various headings. Please feel free to edit as you see fit.';
 
 export interface TemplateContext {
   introduction: string;
