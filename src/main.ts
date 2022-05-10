@@ -34,7 +34,7 @@ import './scss/app.scss';
       const download: HTMLElement | null = document.getElementById('download');
       (debug) ? console.log(`File format changed: ${option}`) : null;
       if (option !== 0 && download) {
-        download.disabled = false;
+        download.disabled = true;
       }
       if (option === 0) {
         download.disabled = true;
