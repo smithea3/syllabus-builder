@@ -3,7 +3,7 @@
     {
       "name": "Fall 2022",
       "start": "2022-08-15",
-      "end": "2022-12-5",
+      "end": "2022-12-05",
       "events": [
         {
           "date": "2022-09-05",
@@ -36,7 +36,7 @@
           "description": "Thanksgiving Break (College Closed)"
         },
         {
-          "date": "2022-12-5",
+          "date": "2022-12-05",
           "noClasses": false,
           "description": "Last Day of Class"
         }

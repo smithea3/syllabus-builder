@@ -18,5 +18,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'no-unused-expressions': 'off',
+    "linebreak-style" : 0,
   },
 };

@@ -5,7 +5,9 @@ import {
   parseISO,
   subDays,
 } from 'date-fns';
+
 import calendar from './calendar.json';
+
 interface DayData {
   date: Date;
   noClasses: boolean;
