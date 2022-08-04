@@ -6,13 +6,11 @@ import {
   subDays,
 } from 'date-fns';
 import calendar from './calendar.json';
-
 interface DayData {
   date: Date;
   noClasses: boolean;
   description: string;
 }
-
 interface JsonEventData {
   date?: string;
   start?: string;
@@ -20,7 +18,6 @@ interface JsonEventData {
   noClasses: boolean;
   description: string;
 }
-
 // This function converts date strings to actual Date objects, and explodes
 // events with start and end dates into dates for the entire range.
 function getEventData(data: JsonEventData[]): DayData[] {
@@ -47,11 +44,9 @@ function getEventData(data: JsonEventData[]): DayData[] {
   }, []);
   return events;
 }
-
 function hasEvents(d: Date, events: DayData[]): DayData | undefined {
   return events.find((event) => isEqual(event.date, d));
 }
-
 export default function getMeetDates(
   termNum: number,
   weekdays: number[],
