@@ -1,56 +1,44 @@
 {
   "terms": [
     {
-      "name": "Summer 2022",
-      "start": "2022-05-31",
-      "end": "2022-07-26",
-      "events": [
-        {
-          "date": "2022-07-04",
-          "noClasses": true,
-          "description": "Institutional Holiday"
-        },
-        {
-          "date": "2022-07-05",
-          "noClasses": false,
-          "description": "Flip Day — Curriculum classes operate on a Thursday schedule"
-        }
-      ]
-    },
-    {
       "name": "Fall 2022",
-      "start": "2022-08-17",
-      "end": "2022-12-15",
+      "start": "2022-08-15",
+      "end": "2022-12-5",
       "events": [
         {
           "date": "2022-09-05",
           "noClasses": true,
-          "description": "Institutional Holiday"
+          "description": "Labor Day (College Closed)"
         },
         {
-          "date": "2022-10-12",
-          "noClasses": false,
-          "description": "Flip Day — Curriculum classes operate on a Monday schedule"
-        },
-        {
-          "date": "2022-10-17",
+          "date": "2022-10-10",
           "noClasses": true,
-          "description": "Fall Break"
+          "description": "Fall Break (College Open)"
         },
         {
-          "date": "2022-11-11",
+          "date": "2022-10-11",
           "noClasses": true,
-          "description": "Veteran's Day"
+          "description": "Fall Break (College Open)"
         },
         {
           "date": "2022-11-23",
           "noClasses": true,
-          "description": "Thanksgiving Break"
+          "description": "Thanksgiving Holiday (College Open)"
         },
         {
           "date": "2022-11-24",
           "noClasses": true,
-          "description": "Thanksgiving Break / Institutional Holiday"
+          "description": "Thanksgiving Break (College Closed)"
+        },
+        {
+          "date": "2022-11-25",
+          "noClasses": true,
+          "description": "Thanksgiving Break (College Closed)"
+        },
+        {
+          "date": "2022-12-5",
+          "noClasses": false,
+          "description": "Last Day of Class"
         }
       ]
     }
