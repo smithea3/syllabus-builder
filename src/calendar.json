@@ -1,44 +1,54 @@
 {
   "terms": [
     {
-      "name": "Fall 2022",
-      "start": "2022-08-15",
-      "end": "2022-12-05",
+      "name": "Spring 2023",
+      "start": "2023-01-09",
+      "end": "2023-05-08",
       "events": [
         {
-          "date": "2022-09-05",
-          "noClasses": true,
-          "description": "Labor Day (College Closed)"
-        },
-        {
-          "date": "2022-10-10",
-          "noClasses": true,
-          "description": "Fall Break (College Open)"
-        },
-        {
-          "date": "2022-10-11",
-          "noClasses": true,
-          "description": "Fall Break (College Open)"
-        },
-        {
-          "date": "2022-11-23",
-          "noClasses": true,
-          "description": "Thanksgiving Holiday (College Open)"
-        },
-        {
-          "date": "2022-11-24",
-          "noClasses": true,
-          "description": "Thanksgiving Break (College Closed)"
-        },
-        {
-          "date": "2022-11-25",
-          "noClasses": true,
-          "description": "Thanksgiving Break (College Closed)"
-        },
-        {
-          "date": "2022-12-05",
+          "date": "2023-01-09",
           "noClasses": false,
-          "description": "Last Day of Class"
+          "description": "First Day of Classes (16-Weeks)"
+        },
+        {
+          "date": "2023-01-16",
+          "noClasses": true,
+          "description": "MLKJ Day"
+        },
+        {
+          "date": "2023-01-17",
+          "noClasses": false,
+          "description": "Last Day to Receive 75% Refund"
+        },
+        {
+          "date": "2023-03-06",
+          "noClasses": true,
+          "description": "Spring Break (College Open)"
+        },
+        {
+          "date": "2023-03-07",
+          "noClasses": true,
+          "description": "Spring Break (College Open)"
+        },
+        {
+          "date": "2023-03-08",
+          "noClasses": true,
+          "description": "Spring Break (College Open)"
+        },
+        {
+          "date": "2023-03-09",
+          "noClasses": true,
+          "description": "Spring Break (College Open)"
+        },
+        {
+          "date": "2023-03-10",
+          "noClasses": true,
+          "description": "Spring Break (College Open)"
+        },
+        {
+          "date": "2023-05-01",
+          "noClasses": false,
+          "description": "Last Day of Classes"
         }
       ]
     }

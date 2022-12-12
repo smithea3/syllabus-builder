@@ -68,8 +68,8 @@ export default function getMeetDates(
       let header = format(current, outputFormat);
       const event = hasEvents(current, eventData);
       if (event) {
-        const noClass = event.noClasses ? 'NO CLASS' : '';
-        header = `${header} ${noClass} (${event.description})`;
+        const noClass = event.noClasses ? 'No Class' : '';
+        header = `${header} | ${noClass} | ${event.description} `;
       }
       prev.push(header);
     }
